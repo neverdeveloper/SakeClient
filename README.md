@@ -1,2 +1,0 @@
-# SakeClient
-My project epta
