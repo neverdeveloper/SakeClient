@@ -50,6 +50,46 @@
                 </p>
             </div>
         </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="faq">
+        <div class="question">
+        </div>
+</section>
+
+<!-- Секция #5 - Футер (тех поддержка)-->
+<footer> </footer>
+
+<script>
+
+    // Loading page
+    window.onload = function () {
+      document.body.classList.add('loaded_hiding');
+      window.setTimeout(function () {
+        document.body.classList.add('loaded');
+        document.body.classList.remove('loaded_hiding');
+      }, 500);
+    }
+
+    //Sticky header
+    document.addEventListener("DOMContentLoaded", function() {
+        const header = document.querySelector("header");
+        window.addEventListener("scroll", function() {
+            header.classList.toggle("sticky", window.scrollY > 20);
+        });
+    });
+
+    // FAQs
+
+    const faqs = document.querySelectorAll(".faq");
+
+    faqs.forEach((faq) => {
+        faq.addEventListener("click", () => {
+            faq.classList.toggle("active");
+        });
+    });
 </script>
 </body>
 </html>
