@@ -114,8 +114,39 @@
 <!-- Секция #5 - Статистика клиента -->
 <section id="join-us">
     <div class="con-text">
+        <div class="container">
+            <div class="con-box">
+                <div class="img"><span style="vertical-align: middle; color: #fff; font-size: 42px; margin-right: 20px;"><i class='bx bxs-user-detail'></i></span></div>
+                <div class="text">
+                    <div class="title">Всего пользователей</div>
+                    <div id="number" data-val="0" class="desc desc-count">0</div>
+                </div>
+            </div>
+            <div class="con-box">
+                <div class="img"><span style="vertical-align: middle; color: #fff; font-size: 40px; margin-right: 20px;"><i class='bx bxs-rocket'></i></span></div>
+                <div class="text">
+                    <div class="title">Запусков клиента</div>
+                    <div id="number" data-val="0" class="desc desc-count">0</div>
+                </div>
+            </div>
+            <div class="con-box">
+                <div class="img"><span style="vertical-align: middle; color: #fff; font-size: 42px; margin-right: 20px;"><i class='bx bx-recycle'></i></span></div>
+                <div class="text">
+                    <div class="title">Выпущено обновлений</div>
+                    <div id="number" data-val="3" class="desc desc-count">0</div>
+                </div>
+            </div>
+            <div class="con-box">
+                <div class="img"><span style="vertical-align: middle; color: #fff; font-size: 40px; margin-right: 20px;"><i class='bx bxs-calendar'></i></span></div>
+                <div class="text">
+                    <div class="title">Дней с открытия</div>
+                    <div id="number" data-val="0" class="desc desc-count"
+                </div>
+            </div>
+        </div>
     </div>
 </section>
+
 <script>
 
     // Loading page
@@ -135,7 +166,38 @@
         });
     });
 
+    //Counter
+let valueDisplays = document.querySelectorAll(".desc-count");
+let interval = 2000;
+let maxEndValue = 0;
+let numSteps = 1000; // Количество шагов, которые вы хотите для анимации
 
+valueDisplays.forEach((valueDisplay) => {
+let endValue = parseInt(valueDisplay.getAttribute("data-val"));
+maxEndValue = Math.max(maxEndValue, endValue);
+});
+
+let duration = Math.floor(interval / numSteps);
+
+
+let counter = setInterval(function () {
+  startValue += increment;
+  step++;
+  valueDisplay.textContent = Math.round(startValue);
+  if (step >= numSteps) {
+      clearInterval(counter);
+      valueDisplay.textContent = endValue; // Убедимся, что конечное значение точное
+  }
+}, duration);
+});
+
+
+
+
+
+</script>
+</body>
+</html>
 //<!-- Секция #6 - говно какое то -->
 
 //Counter
