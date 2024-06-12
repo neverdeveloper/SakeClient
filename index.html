@@ -104,7 +104,7 @@
         <h1 class="title">Установка клиента</h1>
         <p class="desc">Наилучший бесплатный чит для новичков с понятным <br>
             и современным интерфейсом  </p>
-        <a class="main-btn install anim" href="https://workupload.com/file/x9GMJrQh77n"><span><i class="bx bxs-download"></i></span> Скачать</a>
+        <a class="main-btn install anim" href="https://workupload.com/file/HbTJGWajB9p"><span><i class="bx bxs-download"></i></span> Скачать</a>
         <a class="faq anim" href="faq.php.html">Инструкция</a>
         <!-- <div style="padding-top: 17px;" class="inst-sup"><a style="color: #abaeb1;" class="faq" href="https://discord.gg/RJjRnCU88g"> Купить с поддержкой</a> </div> -->
     </div>
@@ -114,39 +114,8 @@
 <!-- Секция #5 - Статистика клиента -->
 <section id="join-us">
     <div class="con-text">
-        <div class="container">
-            <div class="con-box">
-                <div class="img"><span style="vertical-align: middle; color: #fff; font-size: 42px; margin-right: 20px;"><i class='bx bxs-user-detail'></i></span></div>
-                <div class="text">
-                    <div class="title">Всего пользователей</div>
-                    <div id="number" data-val="0" class="desc desc-count">0</div>
-                </div>
-            </div>
-            <div class="con-box">
-                <div class="img"><span style="vertical-align: middle; color: #fff; font-size: 40px; margin-right: 20px;"><i class='bx bxs-rocket'></i></span></div>
-                <div class="text">
-                    <div class="title">Запусков клиента</div>
-                    <div id="number" data-val="0" class="desc desc-count">0</div>
-                </div>
-            </div>
-            <div class="con-box">
-                <div class="img"><span style="vertical-align: middle; color: #fff; font-size: 42px; margin-right: 20px;"><i class='bx bx-recycle'></i></span></div>
-                <div class="text">
-                    <div class="title">Выпущено обновлений</div>
-                    <div id="number" data-val="3" class="desc desc-count">0</div>
-                </div>
-            </div>
-            <div class="con-box">
-                <div class="img"><span style="vertical-align: middle; color: #fff; font-size: 40px; margin-right: 20px;"><i class='bx bxs-calendar'></i></span></div>
-                <div class="text">
-                    <div class="title">Дней с открытия</div>
-                    <div id="number" data-val="0" class="desc desc-count"
-                </div>
-            </div>
-        </div>
     </div>
 </section>
-
 <script>
 
     // Loading page
@@ -166,7 +135,11 @@
         });
     });
 
-    //Counter
+
+//<!-- Секция #6 - говно какое то -->
+
+//Counter
+
 let valueDisplays = document.querySelectorAll(".desc-count");
 let interval = 2000;
 let maxEndValue = 0;
@@ -179,6 +152,11 @@ maxEndValue = Math.max(maxEndValue, endValue);
 
 let duration = Math.floor(interval / numSteps);
 
+valueDisplays.forEach((valueDisplay) => {
+let startValue = 0;
+let endValue = parseInt(valueDisplay.getAttribute("data-val"));
+let increment = (endValue - startValue) / numSteps;
+let step = 0;
 
 let counter = setInterval(function () {
   startValue += increment;
@@ -190,9 +168,6 @@ let counter = setInterval(function () {
   }
 }, duration);
 });
-
-
-
 
 
 </script>
